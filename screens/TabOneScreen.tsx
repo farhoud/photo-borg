@@ -53,7 +53,7 @@ export default function TabOneScreen({navigation}: RootTabScreenProps<'TabOne'>)
 
     const [serverId, setServerId] = useState('QmVYZsjTgm3hBWkkSBugNJYYLPmGTACfoc4HGfqqE6TMcT')
     const onSubmit = (e: any)=>{
-        // console.log(borg)
+        console.log(borg)
         try {
             borg.connect(serverId)
         }catch (e) {

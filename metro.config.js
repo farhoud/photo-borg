@@ -9,7 +9,7 @@ module.exports = {
     ...defaultConfig,
     resolver: {
         extraNodeModules: {
-            crypto: require.resolve('isomorphic-webcrypto')
+            crypto: require.resolve('isomorphic-webcrypto'),
         },
         sourceExts: ['jsx', 'js', 'ts', 'tsx']
     },

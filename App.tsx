@@ -4,6 +4,10 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+import debug from 'debug'
+
+debug.enable('libp2p:upgrader* mss:* ')
+
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -16,6 +20,7 @@ export default function App() {
     return (
 
             <SafeAreaProvider>
+                {/*<PolyfillCrypto />*/}
                 <Navigation colorScheme={colorScheme} />
                 <StatusBar />
             </SafeAreaProvider>

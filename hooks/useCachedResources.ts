@@ -2,6 +2,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
+import { polyfillWebCrypto } from 'expo-standard-web-crypto';
 import {
   registerGlobals
 } from 'react-native-webrtc';
@@ -14,7 +15,7 @@ export default function useCachedResources() {
     async function loadResourcesAndDataAsync() {
       try {
         SplashScreen.preventAutoHideAsync();
-
+        // polyfillWebCrypto();
         registerGlobals()
         // Load fonts
         await Font.loadAsync({
