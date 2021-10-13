@@ -5,6 +5,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import useCachedResources from './hooks/useCachedResources';
 import useColorScheme from './hooks/useColorScheme';
 import Navigation from './navigation';
+// @ts-ignore
+import Borg from './components/BorgClient/BorgClient';
 
 export default function App() {
   const isLoadingComplete = useCachedResources();
@@ -15,8 +17,10 @@ export default function App() {
   } else {
     return (
       <SafeAreaProvider>
-        <Navigation colorScheme={colorScheme} />
-        <StatusBar />
+        <Borg>
+          <Navigation colorScheme={colorScheme} />
+          <StatusBar />
+        </Borg>
       </SafeAreaProvider>
     );
   }
